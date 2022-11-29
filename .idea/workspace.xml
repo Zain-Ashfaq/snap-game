@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63b82537-0586-463f-a711-ed3797d34063" name="Changes" comment="Completed stage 2 and 3">
+    <list default="true" id="63b82537-0586-463f-a711-ed3797d34063" name="Changes" comment="Added two player functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Snap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Snap.java" afterDir="false" />
     </list>
@@ -117,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669731543111</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added two player functionality">
+      <created>1669738698774</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669738698774</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,6 +142,7 @@
     <MESSAGE value="testing github" />
     <MESSAGE value="Return top of deck of card" />
     <MESSAGE value="Completed stage 2 and 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed stage 2 and 3" />
+    <MESSAGE value="Added two player functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added two player functionality" />
   </component>
 </project>

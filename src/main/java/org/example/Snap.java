@@ -1,6 +1,9 @@
 package org.example;
 
+import java.time.Instant;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 import java.util.Timer;
 
@@ -10,7 +13,9 @@ public class Snap {
     private boolean isTwoPlayer = false;
     private boolean isPlayerOneTurn = true;
     Scanner userInput = new Scanner(System.in);
-    Timer timer = new Timer();
+    Date date = new Date();
+
+
 
     public boolean isTwoPlayer() {
         return isTwoPlayer;
@@ -65,6 +70,7 @@ public class Snap {
     }
 
     private void gameLogicTwoPlayers() {
+
         {
             Deck firstDeck = new Deck();
 
@@ -81,6 +87,7 @@ public class Snap {
                         System.out.println("Please press enter to draw card");
                         pressEnter = userInput.nextLine();
                     }
+
                     if (i % 2 == 0) {
                         setTwoPlayer(true);
                         System.out.println("Player two turn");
@@ -91,15 +98,27 @@ public class Snap {
 
 
                     if (card1.equals(card2)) {
+                        long beforeSnap = date.getTime();
+                        System.out.println("Enter snap in 2 seconds to win");
+                        String enterSnap = userInput.nextLine();
 
-                        System.out.println(card2);
-                        System.out.println("You have won Snap game");
-                        System.out.println("how many times " + i);
-                        if (isPlayerOneTurn) {
-                            System.out.println("Player one wins");
+                        long afterSnap = date.getTime();
+                        System.out.println(beforeSnap +"  "+afterSnap);
+
+                        if (afterSnap - beforeSnap >= 200000 && enterSnap.toLowerCase()=="snap") {
+                            System.out.println(card2);
+                            System.out.println("You have won Snap game");
+                            System.out.println("how many times " + i);
+                            if (isPlayerOneTurn) {
+                                System.out.println("Player one wins");
+                            } else {
+                                System.out.println("Player two wins");
+                            }
+
                         } else {
-                            System.out.println("Player two wins");
+                            System.out.println("Sorry you didnt type snap in under two seconds.");
                         }
+
                         setHasGameEnded(true);
                         return;
                     } else {
