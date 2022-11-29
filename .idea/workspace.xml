@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63b82537-0586-463f-a711-ed3797d34063" name="Changes" comment="Added snap timer">
+    <list default="true" id="63b82537-0586-463f-a711-ed3797d34063" name="Changes" comment="Fixed snap timer glitch">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Colours.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Snap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Snap.java" afterDir="false" />
     </list>
@@ -16,6 +17,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -131,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669741013363</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixed snap timer glitch">
+      <created>1669744711363</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669744711363</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -151,6 +160,7 @@
     <MESSAGE value="Completed stage 2 and 3" />
     <MESSAGE value="Added two player functionality" />
     <MESSAGE value="Added snap timer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added snap timer" />
+    <MESSAGE value="Fixed snap timer glitch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed snap timer glitch" />
   </component>
 </project>

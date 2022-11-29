@@ -14,6 +14,8 @@ public class Snap {
     private boolean hasGameEnded = false;
     private boolean isTwoPlayer = false;
     private boolean isPlayerOneTurn = true;
+
+
     Scanner userInput = new Scanner(System.in);
 
 
@@ -87,7 +89,7 @@ public class Snap {
                     System.out.println("Please press enter to draw card");
                     String pressEnter = userInput.nextLine();
                     while (!pressEnter.equals("")) {
-                        System.out.println("Please press enter to draw card");
+                        System.out.println(Colours.ANSI_RED_BACKGROUND + Colours.ANSI_BLACK + "Please only press enter to draw a card" + Colours.ANSI_RESET);
                         pressEnter = userInput.nextLine();
                     }
 
@@ -100,11 +102,11 @@ public class Snap {
                     }
 
 
-                    if (card1 == card2) {
+                    if (true) {
                         long timeMillisBefore = System.currentTimeMillis();
                         long beforeSnap = TimeUnit.MILLISECONDS.toSeconds(timeMillisBefore);
 
-                        System.out.println("Enter snap in 2 seconds to win");
+                        System.out.println(Colours.ANSI_GREEN_BACKGROUND + Colours.ANSI_BLACK + "Enter snap in 2 seconds to win" + Colours.ANSI_RESET);
                         String enterSnap = userInput.nextLine();
                         long timeMillisAfter = System.currentTimeMillis();
 
@@ -114,15 +116,14 @@ public class Snap {
                         System.out.println(beforeSnap + "  " + afterSnap);
 
 
-                        if (afterSnap - beforeSnap <= 2 && enterSnap.toLowerCase() == "snap") {
-                            System.out.println(card2);
+                        if (afterSnap - beforeSnap <= 2 && enterSnap.trim().toLowerCase().equals("snap")) {
+
                             System.out.println("You have won Snap game");
-                            System.out.println("how many times " + i);
-                            if (isPlayerOneTurn) {
-                                System.out.println("Player one wins");
-                            } else {
-                                System.out.println("Player two wins");
-                            }
+
+
+                            String whichPlayerWon = isPlayerOneTurn ? "Player one wins" : "Player two wins";
+                            System.out.println(whichPlayerWon);
+
 
                         } else {
                             System.out.println("Sorry you didnt type snap in under two seconds.");
@@ -143,6 +144,8 @@ public class Snap {
         }
 
     }
+
+
 
     public void StartGame(boolean isTwoPlayer) {
 
