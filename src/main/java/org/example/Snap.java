@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 import java.util.Timer;
+import java.util.concurrent.TimeUnit;
+
 
 public class Snap {
 
@@ -13,8 +15,6 @@ public class Snap {
     private boolean isTwoPlayer = false;
     private boolean isPlayerOneTurn = true;
     Scanner userInput = new Scanner(System.in);
-    Date date = new Date();
-
 
 
     public boolean isTwoPlayer() {
@@ -75,12 +75,15 @@ public class Snap {
             Deck firstDeck = new Deck();
 
             firstDeck.assembleDeck();
+
             while (isHasGameEnded() == false) {
                 System.out.println("test");
                 String card1 = firstDeck.dealCard();
                 String card2 = firstDeck.dealCard();
 
-                for (int i = 0; i < 52; i++) {
+
+                for (int i = 0; i < firstDeck.sizeOfDeck(); i++) {
+                    System.out.println(firstDeck.sizeOfDeck());
                     System.out.println("Please press enter to draw card");
                     String pressEnter = userInput.nextLine();
                     while (!pressEnter.equals("")) {
@@ -97,15 +100,21 @@ public class Snap {
                     }
 
 
-                    if (card1.equals(card2)) {
-                        long beforeSnap = date.getTime();
+                    if (card1 == card2) {
+                        long timeMillisBefore = System.currentTimeMillis();
+                        long beforeSnap = TimeUnit.MILLISECONDS.toSeconds(timeMillisBefore);
+
                         System.out.println("Enter snap in 2 seconds to win");
                         String enterSnap = userInput.nextLine();
+                        long timeMillisAfter = System.currentTimeMillis();
 
-                        long afterSnap = date.getTime();
-                        System.out.println(beforeSnap +"  "+afterSnap);
+                        long afterSnap = TimeUnit.MILLISECONDS.toSeconds(timeMillisAfter);
 
-                        if (afterSnap - beforeSnap >= 200000 && enterSnap.toLowerCase()=="snap") {
+
+                        System.out.println(beforeSnap + "  " + afterSnap);
+
+
+                        if (afterSnap - beforeSnap <= 2 && enterSnap.toLowerCase() == "snap") {
                             System.out.println(card2);
                             System.out.println("You have won Snap game");
                             System.out.println("how many times " + i);
