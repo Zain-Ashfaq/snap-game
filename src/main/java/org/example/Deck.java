@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.*;
 
-public class Deck {
+public class Deck  {
 
 
     Random random = new Random();
@@ -72,7 +72,7 @@ public class Deck {
         Card tempCard = finalDeck.get(0);
         String tempCardSymbol = dealCardSymbol(tempCard);
         finalDeck.remove(0);
-        System.out.println("this is temp card" + tempCard.getSuit() + " " + tempCard.getSymbol() + " " + tempCard.getValue());
+        System.out.println("this is current card " + tempCard.getSuit() + " " + tempCard.getSymbol() + " " + tempCard.getValue());
         return "this is symbol " + tempCardSymbol;
 
 
@@ -104,6 +104,7 @@ public class Deck {
     public void shuffleDeck() {
         Collections.shuffle(finalDeck);
     }
+
 
 
 }

@@ -1,11 +1,6 @@
 package org.example;
 
-import java.time.Instant;
-import java.time.ZonedDateTime;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
-import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
 
@@ -48,7 +43,7 @@ public class Snap {
                 System.out.println("Please press enter to draw card");
                 String pressEnter = userInput.nextLine();
                 while (!pressEnter.equals("")) {
-                    System.out.println("Please press enter to draw card");
+                    System.out.println(Colours.ANSI_RED_BACKGROUND + Colours.ANSI_BLACK + "Please only press enter to draw a card" + Colours.ANSI_RESET);
                     pressEnter = userInput.nextLine();
                 }
 
@@ -56,7 +51,7 @@ public class Snap {
                 if (card1.equals(card2)) {
                     System.out.println(card2);
                     System.out.println("You have won Snap game");
-                    System.out.println("how many times " + i);
+
                     setHasGameEnded(true);
                     return;
                 } else {
@@ -102,18 +97,19 @@ public class Snap {
                     }
 
 
-                    if (true) {
+                    if (card1.equals(card2)) {
                         long timeMillisBefore = System.currentTimeMillis();
                         long beforeSnap = TimeUnit.MILLISECONDS.toSeconds(timeMillisBefore);
 
-                        System.out.println(Colours.ANSI_GREEN_BACKGROUND + Colours.ANSI_BLACK + "Enter snap in 2 seconds to win" + Colours.ANSI_RESET);
+                        System.out.println(Colours.ANSI_GREEN_BACKGROUND + Colours.ANSI_BLACK + "Enter word snap in 2 seconds to win" + Colours.ANSI_RESET);
                         String enterSnap = userInput.nextLine();
                         long timeMillisAfter = System.currentTimeMillis();
 
                         long afterSnap = TimeUnit.MILLISECONDS.toSeconds(timeMillisAfter);
+                        long timeDifference = afterSnap - beforeSnap;
 
 
-                        System.out.println(beforeSnap + "  " + afterSnap);
+                        System.out.println("Your time was " + Colours.ANSI_RED_BACKGROUND + Colours.ANSI_BLACK + timeDifference + Colours.ANSI_RESET + " seconds");
 
 
                         if (afterSnap - beforeSnap <= 2 && enterSnap.trim().toLowerCase().equals("snap")) {
@@ -144,7 +140,6 @@ public class Snap {
         }
 
     }
-
 
 
     public void StartGame(boolean isTwoPlayer) {
